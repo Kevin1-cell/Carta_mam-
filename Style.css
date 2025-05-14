@@ -264,10 +264,31 @@ h1 {
   }
 }
 
-/* VIDEO CENTRAL */
+/*Video*/
+
 .video {
-  text-align: center;
-  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+}
+
+.video video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* FLORES (SE ACTIVAN CON SCROLL) */

@@ -116,10 +116,9 @@
        VIDEO PERSONALIZADO
   ======================== -->
     <div class="video">
-      <!-- Reemplaza el src con tu propio video -->
-      <video width="300" controls>
-        <source src="tu_video.mp4" type="video/mp4" />
-        Tu navegador no soporta este video.
+      <video id="videoMama" muted loop>
+        <source src="./audio/video_mama.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
       </video>
     </div>
 
@@ -243,4 +242,22 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script src="Script.js"></script>
+  <script>
+    const video = document.getElementById("videoMama");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); // 50% del video debe estar visible
+
+    observer.observe(video);
+  </script>
 </html>
